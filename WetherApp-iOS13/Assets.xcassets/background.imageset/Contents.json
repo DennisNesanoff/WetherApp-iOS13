@@ -1,0 +1,89 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775858.jpg",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775859.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "green-trees-under-blue-and-orange-sky-during-sunset-1107717.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775861.jpg",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775860.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "green-trees-under-blue-and-orange-sky-during-sunset-1107718.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775862.jpg",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "forest-under-dark-clouds-3775863.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "green-trees-under-blue-and-orange-sky-during-sunset-1107719.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
