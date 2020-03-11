@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var weatherImageView: UIImageView!
     @IBOutlet var temperatureLabel: UILabel!
@@ -18,11 +18,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.delegate = self
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        
+        searchTextField.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(searchTextField.text!)
+        textField.text = ""
+    }
 }
 
