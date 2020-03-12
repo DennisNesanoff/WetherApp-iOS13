@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var searchTextField: UITextField!
     
+    let weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +41,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(searchTextField.text!)
+        guard let city = textField.text else { return }
+        weatherManager.fetchWeater(sityName: city)
         textField.text = ""
     }
 }
