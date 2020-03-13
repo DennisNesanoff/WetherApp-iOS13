@@ -8,18 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, WeatherDelegate {
     
     @IBOutlet var weatherImageView: UIImageView!
     @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var searchTextField: UITextField!
     
-    let weatherManager = WeatherManager()
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherManager.delegate = self
         searchTextField.delegate = self
     }
 
@@ -44,6 +45,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard let city = textField.text else { return }
         weatherManager.fetchWeater(sityName: city)
         textField.text = ""
+    }
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        print(weather.cityName)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 }
 
