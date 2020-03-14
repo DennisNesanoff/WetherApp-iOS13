@@ -31,9 +31,12 @@
                                                     <constraint firstAttribute="height" constant="50" id="cHq-f1-8fK"/>
                                                     <constraint firstAttribute="width" constant="50" id="nw1-pZ-Oxg"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" name="WeatherColor"/>
                                                 <state key="normal" backgroundImage="location.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="showLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bb6-Nw-8tl"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEw-eD-D2x">
                                                 <rect key="frame" x="60" y="0.0" width="254" height="50"/>

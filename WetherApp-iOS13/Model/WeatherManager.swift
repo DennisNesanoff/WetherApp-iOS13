@@ -7,20 +7,33 @@
 //
 
 import Foundation
+import  CoreLocation
 
+// MARK: - WeatherDelegate
 protocol WeatherDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
     func didFailWithError(error: Error)
 }
 
+extension WeatherDelegate {
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+// MARK: - WeatherManager
 struct WeatherManager {
-    let weatherURL = "https://samples.openweathermap.org/data/2.5/find?"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=e6a1c5270312f2cc57f976cf3fe77dc6&units=metric"
     var delegate: WeatherDelegate?
     
-    func fetchWeater(sityName: String) {
-        let urlString = "\(weatherURL)q=\(sityName)&units=metric&appid=e6a1c5270312f2cc57f976cf3fe77dc6"
+    func fetchWeater(lan: CLLocationDegrees, lon: CLLocationDegrees) {
+        let urlString = "\(weatherURL)&lat=\(lan)&lon=\(lon)"
 //        print(urlString)
-        
+        performRequest(with: urlString)
+    }
+    
+    func fetchWeater(sityName: String) {
+        let urlString = "\(weatherURL)&q=\(sityName)"
         performRequest(with: urlString)
     }
     
@@ -54,9 +67,9 @@ struct WeatherManager {
         
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.list[0].id
-            let cityName = decodedData.list[0].name
-            let temp = decodedData.list[0].main.temp
+            let cityName = decodedData.name
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
             
             return WeatherModel(conditionID: id, cityName: cityName, temperature: temp)
         } catch let error {
